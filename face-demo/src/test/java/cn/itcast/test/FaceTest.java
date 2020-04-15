@@ -19,7 +19,7 @@ public class FaceTest {
     @Before
     public void init() {
         //1.创建java代码和百度云交互的client对象
-        client = new AipFace("15246423","QFYuYWDlb5mHTA8I9XTGlgjM","mvgF3pPoOLsMadFGiemuzt0ayE3jFIOv");
+        client = new AipFace("19436965","yZ3S1vTEZ0ctIHEU1p5xIgo6","OQC3VkQFqXrSZMczzmhEH34rarR2MWzy");
     }
 
     //人脸注册:向百度的人脸库中添加用户人脸照片
@@ -27,6 +27,7 @@ public class FaceTest {
     public void testFaceRegister() throws Exception {
         //2.参数设置
         HashMap<String,String> options = new HashMap<>();
+        //这些参数都是百度api要求提供的,可以参考resources/note目录下的笔记--人脸注册 请求参数详情
         options.put("quality_control","NORMAL");//图片质量  NONE  LOW  NORMAL，HIGH
         options.put("liveness_control","LOW");//活体检测
         options.put("action_type","replace");//活体检测
