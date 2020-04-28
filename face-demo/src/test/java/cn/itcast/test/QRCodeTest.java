@@ -17,7 +17,7 @@ import java.util.Base64;
 public class QRCodeTest {
 
 //    public static void main(String[] args) throws Exception {
-//        //1.二维码中的信息
+//        //1.二维码中的信息,扫描二维码之后的目的地
 //        String content = "http://www.itcast.cn";
 //        //2.通过zxing生成二维码(保存到本地图片，支持以data url的形式体现)
 //
@@ -38,7 +38,7 @@ public class QRCodeTest {
 
     //生成dataUrl形式的二维码
     public static void main(String[] args) throws Exception {
-        //1.二维码中的信息
+        //1.二维码中的信息,扫描二维码之后的目的地
         String content = "http://www.itcast.cn";
         //2.通过zxing生成二维码(保存到本地图片，支持以data url的形式体现)
         //创建QRCodeWriter对象
@@ -57,6 +57,7 @@ public class QRCodeTest {
         ImageIO.write(image,"png",os);
         //对byte数组进行base64处理
         String encode = Base64Util.encode(os.toByteArray());
+        //"data:image/png;base64,"+encode  代表的是dataurl格式的图片字符串
         System.out.println(new String("data:image/png;base64,"+encode));
     }
 }
